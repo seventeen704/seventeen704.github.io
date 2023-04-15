@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://seventeen704.github.io">
-  <title>Archives: 2023/4 | Yux&#39;s blog</title>
+  <title>FCTF热身赛解题记录 | Yux&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yux&#39;s blog">
-<meta property="og:url" content="https://seventeen704.github.io/archives/2023/04/index.html">
+  <meta name="description" content="更新ing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FCTF热身赛解题记录">
+<meta property="og:url" content="https://seventeen704.github.io/2023/04/15/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Yux&#39;s blog">
+<meta property="og:description" content="更新ing">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://seventeen704.github.io/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/image-20230414200818935.png">
+<meta property="og:image" content="https://seventeen704.github.io/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/image-20230415133528476.png">
+<meta property="article:published_time" content="2023-04-15T06:52:51.000Z">
+<meta property="article:modified_time" content="2023-04-15T06:54:58.562Z">
 <meta property="article:author" content="seven">
+<meta property="article:tag" content="writeup">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://seventeen704.github.io/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/image-20230414200818935.png">
   
     <link rel="alternative" href="/atom.xml" title="Yux&#39;s blog" type="application/atom+xml">
   
@@ -156,36 +164,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-FCTF热身赛解题记录" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      FCTF热身赛解题记录
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/04/15/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+
+        
+        <a href="/2023/04/15/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
   	<time datetime="2023-04-15T06:52:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/04/15/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/">FCTF热身赛解题记录</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>更新ing</p>
+<span id="more"></span>
 
-        <div class="article-info info-on-right">
-          
+<h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="1、rsa1"><a href="#1、rsa1" class="headerlink" title="1、rsa1"></a>1、rsa1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> secret <span class="keyword">import</span> flag</span><br><span class="line"></span><br><span class="line">p = getPrime(<span class="number">64</span>)</span><br><span class="line">q = getPrime(<span class="number">1024</span>)</span><br><span class="line">n = p * q</span><br><span class="line">e = <span class="number">0x10001</span></span><br><span class="line"></span><br><span class="line">m = bytes_to_long(flag)</span><br><span class="line">c = <span class="built_in">pow</span>(m, e, n)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;len(flag) = <span class="subst">&#123;<span class="built_in">len</span>(flag)&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;n = <span class="subst">&#123;n&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;e = <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;c = <span class="subst">&#123;c&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">$ python -u &quot;/home/thr/ctf/rsa/rsa1/rsa1.py&quot;</span></span><br><span class="line"><span class="string">len(flag) = 42</span></span><br><span class="line"><span class="string">n = 2344031774120450227222163449273522710237811856610020053151071812583323189515207590315639609325734545588015509682993910536404582498434006141808713597208098442385837979145991745396289779481697453098384992544124215169946393661168443111598766415793321038443187278202702919466250339350739903543971076517215175336855425124777749331149</span></span><br><span class="line"><span class="string">e = 65537</span></span><br><span class="line"><span class="string">c = 2061326300909909596530207614698844886195704577793122456586942041841367492507627873521687641975284943687714401025548380642746747292514358464264258976998196251126428546740126012244228164105058784582854120400010388430367028062118566352259825796248977990284008273793519074106608767847359434837708143908675198301135315783154701675919</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>题目给出factor(n)的提示</p>
+<p>首先将 n 用 yafu分解为 q 和 p</p>
+<p><img src="/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/image-20230414200818935.png" alt="image-20230414200818935"></p>
+<p>再利用脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> long_to_bytes</span><br><span class="line"> </span><br><span class="line">p = <span class="number">16580582783714939711</span></span><br><span class="line">q = <span class="number">141372097995415659711305414022409375892676977558420191737303989979185672330317491574533742090674042688018131636767846433377915447138986038513163348921862957656923820240193869197893659106938977046434105560468645088155068591190742396586343191921472610295041407743499481955517923702694992558552353305195436886259</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">c = <span class="number">2061326300909909596530207614698844886195704577793122456586942041841367492507627873521687641975284943687714401025548380642746747292514358464264258976998196251126428546740126012244228164105058784582854120400010388430367028062118566352259825796248977990284008273793519074106608767847359434837708143908675198301135315783154701675919</span></span><br><span class="line">n = p * q</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">d = libnum.invmod(e, (p - <span class="number">1</span>) * (q - <span class="number">1</span>))</span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)  </span><br><span class="line">flag = long_to_bytes(m) </span><br><span class="line"><span class="built_in">print</span>(flag)  </span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27; </span></span><br><span class="line"><span class="string">b&#x27;flag&#123;f6096646-2c7f-4cb5-b867-d81e280fa79d&#125;&#x27;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2、rsa2"><a href="#2、rsa2" class="headerlink" title="2、rsa2"></a>2、rsa2</h3><p>大致与第一题相同，除了n=p ** 2 * q，所以φ(n)=p * (p-1) * (q-1)</p>
+<p>但是 n 用 yafu分解不出来，于是换了个整数分解的工具</p>
+<p><a target="_blank" rel="noopener" href="https://www.alpertron.com.ar/ECM.HTM">整数分解计算器 (alpertron.com.ar)</a></p>
+<p><img src="/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/image-20230415133528476.png" alt="image-20230415133528476"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">52986 500495 626768 781489 905375 361038 023608 407335 336569 493462 339787 702897 564355 201223 475253 207424 410351 347249 720271 352215 653214 210674 806954 669996 432311 082620 169088 743292 670207 664075 792814 976051 451664 831367 516234 357272 851909 404116 258221 737141 437152 188515 251799 977404 088236 795171 799523 712619 018726 473067 535049 598512 897693 289778 461968 607877 039315 302353（347 位）= 18 171125 441481 8036412 × 160 472856 902623 327727 942815 996379 016124 487599 733397 277768 389464 225056 213151 068369 690326 545789 961412 298739 341746 484002 121845 051136 580512 162616 815087 342099 408173 590322 569154 604607 544451 411445 818479 611131 276612 690935 419245 839249 004069 384105 259284 998316 700984 690698 757807 742249 623501 269084 696626 052661 096687 370913（309 位）</span><br></pre></td></tr></table></figure>
+
+<p>解决方案：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> long_to_bytes</span><br><span class="line"> </span><br><span class="line">p = <span class="number">18171125441481803641</span></span><br><span class="line">q = <span class="number">160472856902623327727942815996379016124487599733397277768389464225056213151068369690326545789961412298739341746484002121845051136580512162616815087342099408173590322569154604607544451411445818479611131276612690935419245839249004069384105259284998316700984690698757807742249623501269084696626052661096687370913</span></span><br><span class="line">n = p * p * q</span><br><span class="line"></span><br><span class="line">n = <span class="number">52986500495626768781489905375361038023608407335336569493462339787702897564355201223475253207424410351347249720271352215653214210674806954669996432311082620169088743292670207664075792814976051451664831367516234357272851909404116258221737141437152188515251799977404088236795171799523712619018726473067535049598512897693289778461968607877039315302353</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">c = <span class="number">50149998882525242009894034048226075210383107246863776211806925811871056629792014366396308663902185657731408250379983408511997008355550977628970619597857628717212633753691790726861857992163073892295927203864329260252005911513317060354634986551840625686313770392421318047750247677474137938095883512958854577388867869011953977830645651763942515611990</span></span><br><span class="line"></span><br><span class="line">d = libnum.invmod(e, p*(p-<span class="number">1</span>)*(q-<span class="number">1</span>))</span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)   <span class="comment"># m 的十进制形式</span></span><br><span class="line">flag = long_to_bytes(m)  <span class="comment"># m明文</span></span><br><span class="line"><span class="built_in">print</span>(flag)  <span class="comment"># 结果为 b‘ m ’ 的形式</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">b&#x27;flag&#123;77361f02-0196-4b6c-aed0-c12557e6a01a&#125;&#x27;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3、rsa3"><a href="#3、rsa3" class="headerlink" title="3、rsa3"></a>3、rsa3</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> secret <span class="keyword">import</span> flag</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pad_flag</span>(<span class="params">flag, bits=<span class="number">2048</span></span>):</span></span><br><span class="line">    pad = os.urandom(bits//<span class="number">8</span> - <span class="built_in">len</span>(flag))</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>.from_bytes(flag + pad, <span class="string">&quot;big&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">把bytes类型的变量x，转化为十进制整数</span></span><br><span class="line"><span class="string">big 左边是高位</span></span><br><span class="line"><span class="string">m = pad_flag(flag)</span></span><br><span class="line"><span class="string">flag+pad=int.to_bytes(m,&quot;big&quot;)</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">e = <span class="number">3</span></span><br><span class="line">n_list = [getPrime(<span class="number">1024</span>) * getPrime(<span class="number">1024</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line">c_list = []</span><br><span class="line"></span><br><span class="line">m = pad_flag(flag)</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> n_list:</span><br><span class="line">    c_list.append(<span class="built_in">pow</span>(m, e, n))</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">m的e次方模n</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;n_list = <span class="subst">&#123;n_list&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;e = <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;c_list = <span class="subst">&#123;c_list&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">$ python -u &quot;/home/thr/ctf/rsa/rsa3/rsa3.py&quot;</span></span><br><span class="line"><span class="string">n_list = [28944344261597775051813764355395939753211006401315214364740510119067863168154872722039027524722944891307632481716148400262450719344353605175084063113056039818602829416290847510379228896413876323566539013478892695625267730254717237093646738314438350864861944361223510386836608673958839791671491891295992276047594892956756595731468681462159640432876192500258245320432491668043077820020845863915030636993040614737205113654126772165312408480634470105861657412524595850541953776644423051493642732745894174759514025204154564714616016205567707572948046232152302263447798466862322997192121622503042846665697191534656247105567, 18090754921027348142548958177780418949713022362701849089282881531571610880545163869662334527712285867836920721193256715753369756159221522790813362624278895472670639006769763388882966059886858725431710935132900076846777179470381124324270439120021122358940060971370919273535004400935959073710922550712261781697726429198002759066710514805740798241997875598683791640372247373845765082829342979851050824479064638239361147508723073670492241581924663734844209172677685056332518321836272116553710209290814851131552570312538975897578630749542697352708417377404321180161948080643353155732309379406867635950478272648468546871359, 23959252998358020941896303243407994625195175883440315265259220571121369864471637892526500888468225957496743572625199494779757310641815375466798964143604197056432107160581339140964663907401556698929673805665542692626030756898209283937572839624999522021821833304191743640604866365132623203297481760357801549857586518487724578367601428113728197891871427254202490677113860439416696486138213198132750763469785851806671046640921789470279952827835911556679859788591835589401636919466832282761743982484790483902745256422295002169607350858328865828871542052443985744035196211513378067620647179052231892545167151325180011790143]</span></span><br><span class="line"><span class="string">e = 3</span></span><br><span class="line"><span class="string">c_list = [8225286492457063582943538938162478750274398209176279559121090906252812776271534843505678570987851735380115307004686822650549239678275369935484752929714314669968312401818813235375429229803910240540457593413154284457693213135411088920892442421622442071803788378094964622320415199058428304994275925363694444304061932265675837191355373792132096511121401532823963216988202702993653436551555194450568384024137680151027447372415247322198435157023527408327886081579260681334095337112741673647369528957567398950225487379648205753084543754771141466423803325763298470938846049564757746264569898041907578579513525757682983413664, 8575422897828931946597433690267642287689915024549548023764808785189930697272504753834804082763807291484848096965353046130782931363370522633631632978265758308253313312350189694932132167463930526212831421278865068315905570457560738080102470002000611167003346415263908325792909553854454215663558981341022358723594365175436224767500077423133863719640271495994126931404287890565882634205891216163134921291466620089646321995619317581197651388316827421450611555321590188177893435617148776168769867334934109227145978203661535602158138828454257830896873125933717290694042442911401587715135173237773894343116783336987415569428, 4378830322852316947302104020005451650785778475508164813242110121800568130909128111154083658524489357811439390339510156257397572778711862241225861187157815614071058351075344386441481599935035075465332334838203781561324777266381873613596981893811975835687919077650097347279083505601189968718848878660582169266467131856421770183698388206152871119295009014935782774918716283365811207844282994898157953046100418480317194000929052603796614733328019978618167826662714964297512306715999979608319493634745346295587620690664238033867194776643833817139533497952939173358998462220554744999523208543671312468730361395594842301117]</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>考察中国剩余定理</p>
+<p>根据题目，思路大概是：根据n_lish和c_list，利用中国剩余定理求出m^e，再开e次方求出m。</p>
+<p>m = pad_flag(flag)，所以flag+pad=m.to_bytes(256, byteorder=’big’)</p>
+<p>解决方案：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span>  binascii</span><br><span class="line"></span><br><span class="line"><span class="comment">#aList：余数，mList：模数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CRT</span>(<span class="params">aList, mList</span>):</span></span><br><span class="line">    M = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> mList:</span><br><span class="line">        M = M * i   <span class="comment">#计算M = ∏ mi</span></span><br><span class="line">    x = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(mList)):</span><br><span class="line">        Mi = M // mList[i]   <span class="comment">#计算Mi</span></span><br><span class="line">        Mi_inverse = gmpy2.invert(Mi, mList[i]) <span class="comment">#计算Mi的逆元</span></span><br><span class="line">        x += aList[i] * Mi * Mi_inverse <span class="comment">#构造x各项</span></span><br><span class="line">    x = x % M</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">n_list = [<span class="number">28944344261597775051813764355395939753211006401315214364740510119067863168154872722039027524722944891307632481716148400262450719344353605175084063113056039818602829416290847510379228896413876323566539013478892695625267730254717237093646738314438350864861944361223510386836608673958839791671491891295992276047594892956756595731468681462159640432876192500258245320432491668043077820020845863915030636993040614737205113654126772165312408480634470105861657412524595850541953776644423051493642732745894174759514025204154564714616016205567707572948046232152302263447798466862322997192121622503042846665697191534656247105567</span>, <span class="number">18090754921027348142548958177780418949713022362701849089282881531571610880545163869662334527712285867836920721193256715753369756159221522790813362624278895472670639006769763388882966059886858725431710935132900076846777179470381124324270439120021122358940060971370919273535004400935959073710922550712261781697726429198002759066710514805740798241997875598683791640372247373845765082829342979851050824479064638239361147508723073670492241581924663734844209172677685056332518321836272116553710209290814851131552570312538975897578630749542697352708417377404321180161948080643353155732309379406867635950478272648468546871359</span>, <span class="number">23959252998358020941896303243407994625195175883440315265259220571121369864471637892526500888468225957496743572625199494779757310641815375466798964143604197056432107160581339140964663907401556698929673805665542692626030756898209283937572839624999522021821833304191743640604866365132623203297481760357801549857586518487724578367601428113728197891871427254202490677113860439416696486138213198132750763469785851806671046640921789470279952827835911556679859788591835589401636919466832282761743982484790483902745256422295002169607350858328865828871542052443985744035196211513378067620647179052231892545167151325180011790143</span>]</span><br><span class="line">c_list = [<span class="number">8225286492457063582943538938162478750274398209176279559121090906252812776271534843505678570987851735380115307004686822650549239678275369935484752929714314669968312401818813235375429229803910240540457593413154284457693213135411088920892442421622442071803788378094964622320415199058428304994275925363694444304061932265675837191355373792132096511121401532823963216988202702993653436551555194450568384024137680151027447372415247322198435157023527408327886081579260681334095337112741673647369528957567398950225487379648205753084543754771141466423803325763298470938846049564757746264569898041907578579513525757682983413664</span>, <span class="number">8575422897828931946597433690267642287689915024549548023764808785189930697272504753834804082763807291484848096965353046130782931363370522633631632978265758308253313312350189694932132167463930526212831421278865068315905570457560738080102470002000611167003346415263908325792909553854454215663558981341022358723594365175436224767500077423133863719640271495994126931404287890565882634205891216163134921291466620089646321995619317581197651388316827421450611555321590188177893435617148776168769867334934109227145978203661535602158138828454257830896873125933717290694042442911401587715135173237773894343116783336987415569428</span>, <span class="number">4378830322852316947302104020005451650785778475508164813242110121800568130909128111154083658524489357811439390339510156257397572778711862241225861187157815614071058351075344386441481599935035075465332334838203781561324777266381873613596981893811975835687919077650097347279083505601189968718848878660582169266467131856421770183698388206152871119295009014935782774918716283365811207844282994898157953046100418480317194000929052603796614733328019978618167826662714964297512306715999979608319493634745346295587620690664238033867194776643833817139533497952939173358998462220554744999523208543671312468730361395594842301117</span>]</span><br><span class="line">e=<span class="number">3</span></span><br><span class="line">m_e = CRT(c_list, n_list) <span class="comment">#计算m^e</span></span><br><span class="line">m=gmpy2.iroot(m_e, e)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(m[<span class="number">0</span>]).to_bytes(<span class="number">256</span>, byteorder=<span class="string">&#x27;big&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">b&#x27;flag&#123;1f2440e0-ec99-4c5a-82e8-26579d292c28&#125;\x8a#\x10\xe0m=-\x9ez\xa6\x14&quot;\xa8\xd3S\xd5\xd7\x97;f\xd0\xbd\xd2Z\t\x8f\xe7vG\&#x27;\xc7\x9c\xfa\xd8\x99\xf0\xba\xc3o-i\xa1&quot;z&quot;\xd8\x84!K;&#125;p B\x85:\xa1\xc5u\x03i\\\xd3\x1d3&#123;)\xad\x03J\xcd\x86X\x13J\x1c\xebF\xee\xa3\xed ]k\xbe\xc3\xda\x83V&#123;\xae\x1e\x89\xd5\x16\xa1\xa3\x10\xdd\xb3j\x19\xa2_\xf4\xbf\xc8PW\xc2\xc1\xba\xf2&amp;\xee\xff\xfa\x9e;\xeaE&gt;\x96\x86\x8e\xa6+9\x02\xf0\x95sF(\x8d4\xd3\xdf\x8f\x91\xb7\x8e\x9b\x8e\x8a;\xe8\xc8.\x924\x96P\x11\x96\xdc\xf7&#125;\xd0\xf85\xdd\x87\xe5\x08\x9a0\xb2\x12tG\x9f\xc2\x19H\&#x27;K\x04\xf2\t\xcd\xe4g\xd4A|L_yF\xf4\xfb1b\x93Zp\xe8\xfa\xbb\x03\xd2\x00\x7f\xc6)\xa2m\xbbI\xb3=\xde=&#x27;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,57 +252,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://seventeen704.github.io/2023/04/15/FCTF%E7%83%AD%E8%BA%AB%E8%B5%9B%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/04/15/%E7%83%AD%E8%BA%AB%E8%B5%9B/" class="archive-article-date">
-  	<time datetime="2023-04-15T06:41:03.555Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2023/04/15/%E7%83%AD%E8%BA%AB%E8%B5%9B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FCTF热身赛记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/04/15/%E7%83%AD%E8%BA%AB%E8%B5%9B/">FCTF热身赛记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">writeup</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#crypto"><span class="toc-number">1.</span> <span class="toc-text">crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81rsa1"><span class="toc-number">1.1.</span> <span class="toc-text">1、rsa1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81rsa2"><span class="toc-number">1.2.</span> <span class="toc-text">2、rsa2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81rsa3"><span class="toc-number">1.3.</span> <span class="toc-text">3、rsa3</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -270,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
